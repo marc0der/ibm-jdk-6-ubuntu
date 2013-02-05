@@ -1,0 +1,12 @@
+bin/
+copyright
+demo/
+docs/
+include/
+jre/
+lib/
+license_en.txt
+notices.txt
+readmefirst.lnx.txt
+sample/
+src.zip
