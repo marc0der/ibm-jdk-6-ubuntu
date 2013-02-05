@@ -1,3 +1,9 @@
+ibm-6-jdk (12.0-1ubuntu1) quantal; urgency=high
+
+  * Change priority to 1000.
+
+ -- Marco Vermeulen <vermeulen.mp@gmail.com>  Tue, 05 Feb 2013 11:18:19 +0000
+
 ibm-6-jdk (12.0-1ubuntu0) quantal; urgency=high
 
   * Initial release.

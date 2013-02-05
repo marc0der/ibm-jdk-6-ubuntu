@@ -3,7 +3,7 @@
 set -e
 
 multiarch=x86_64-linux-gnu
-priority=2000
+priority=1000
 basedir=/usr/lib/jvm/java-6-ibm
 jdk_tools='appletviewer extcheck idlj jar jarsigner java javac javadoc javah javap jconsole jcontrol jdb jdmpview jrunscript keytool native2ascii policytool rmic rmid rmiregistry schemagen serialver tnameserv wsgen wsimport xjc'
 
