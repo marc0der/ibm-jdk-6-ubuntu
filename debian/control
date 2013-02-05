@@ -1,0 +1,24 @@
+Source: ibm-6-jdk
+Section: java
+Priority: optional
+Maintainer: Marco Vermeulen <vermeulen.mp@gmail.com>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.9.3
+Homepage: http://www.ibm.com
+
+Package: ibm-6-jdk
+Section: java
+Architecture: all
+Depends: ${misc:Depends}
+Description: IBM Java Software Development Kit (SDK) 
+ The SDK is an installable Java package supplied by IBM®, which contains the Java Application Programming Interface (API). The Java API is a large collection of ready-made classes, grouped into libraries, that help you develop and deploy applications.
+ .
+ The SDK also includes
+ * The Java Compiler.
+ * The IBM Java Runtime Environment (JRE) and IBM Java Virtual machine (JVM).
+ * Tools for monitoring, debugging, and documenting applications.
+ * Tools for developing user interfaces, or GUIs.
+ * Integration libraries for applications that must access databases and remote objects.
+ * The SDK package contains a readme file that provides links to the online information center documentation, and to downloadable documentation. The documentation available for download includes this guide, in multiple formats.
+ .
+ Applications written entirely in Java must have no dependencies on the IBM SDK directory structure (or files in those directories). Any dependency on the SDK directory structure (or the files in those directories) might result in application portability problems. Java Native Interface (JNI) applications have some minor dependencies.

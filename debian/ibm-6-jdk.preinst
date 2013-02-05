@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e
+
+multiarch=x86_64-linux-gnu
+basedir=/usr/lib/jvm/java-6-ibm
+jdk_tools='appletviewer apt extcheck idlj jar jarsigner java javac javadoc javah javap jconsole jcontrol jdb jdmpview jrunscript keytool native2ascii policytool rmic rmid rmiregistry schemagen serialver tnameserv wsgen wsimport xjc'
+
+case "$1" in
+    upgrade)
+	if [ -n "$multiarch" ] && [ -n "$2" ]; then
+	    for i in $jdk_tools; do
+			if [ -n "$(update-alternatives --list $i 2>/dev/null | grep ^$old_basedir/)" ]; then
+			    update-alternatives --verbose --remove $i $basedir/bin/$i
+			fi
+	    done
+	fi
+	;;
+esac
+
+
+
+exit 0

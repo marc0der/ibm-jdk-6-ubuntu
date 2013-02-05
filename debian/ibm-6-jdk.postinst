@@ -1,0 +1,33 @@
+#!/bin/sh
+
+set -e
+
+multiarch=x86_64-linux-gnu
+priority=2000
+basedir=/usr/lib/jvm/java-6-ibm
+jdk_tools='appletviewer extcheck idlj jar jarsigner java javac javadoc javah javap jconsole jcontrol jdb jdmpview jrunscript keytool native2ascii policytool rmic rmid rmiregistry schemagen serialver tnameserv wsgen wsimport xjc'
+
+case "$1" in
+configure)
+    if [ -z "$2" ]; then
+	   update_alternatives=y
+    fi
+    if [ -n "$multiarch" ] && [ -n "$2" ]; then
+    	for i in $jdk_tools; do
+    	    if [ -z "$(update-alternatives --list $i 2>/dev/null | grep ^$basedir/)" ]; then
+        		update_alternatives=y
+        		break
+    	    fi
+    	done
+    fi
+
+    if [ "$update_alternatives" = y ]; then
+        for i in $jdk_tools; do
+           update-alternatives --install /usr/bin/$i $i $basedir/bin/$i $priority
+        done
+    fi # update alternatives
+
+    ;;
+esac
+
+exit 0

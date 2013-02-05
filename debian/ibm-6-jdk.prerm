@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+jdk_tools='appletviewer apt extcheck idlj jar jarsigner java javac javadoc javah javap jconsole jcontrol jdb jdmpview jrunscript keytool native2ascii policytool rmic rmid rmiregistry schemagen serialver tnameserv wsgen wsimport xjc'
+basedir=/usr/lib/jvm/java-6-ibm
+
+if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]; then
+    for i in $jdk_tools; do
+		update-alternatives --remove $i $basedir/bin/$i
+    done
+fi
+
+
